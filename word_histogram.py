@@ -16,12 +16,17 @@ def process_line(line, hist):
 		word = word.strip(string.punctuation + string.whitespace)
 		word = word.lower()
 		hist[word] = hist.get(word,0) + 1
+		
+		
+def different_word(hist):
+	return len(hist)
+	
 
 
 
 if __name__ == '__main__':
 			hist = make_histogram ('king.txt')
-			print hist
+			print different_word(hist)
 			
 	
 		
