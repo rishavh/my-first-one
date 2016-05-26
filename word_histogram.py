@@ -21,12 +21,24 @@ def process_line(line, hist):
 def different_word(hist):
 	return len(hist)
 	
-
-
-
+def most_commen_word(hist):
+	t = []
+	for keys ,values in hist.iteritems():
+		t.append((values, keys))
+		
+	t.sort(reverse = True)
+	return t
 if __name__ == '__main__':
 			hist = make_histogram ('king.txt')
 			print different_word(hist)
+			num = int(raw_input("enter the number of word you want to p which are common :"))
+			
+			
+			t = most_commen_word(hist)
+			
+			for x, y in t[0:num]:
+				print y,x
+				
 			
 	
 		
